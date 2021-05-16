@@ -1,7 +1,7 @@
-const Tarea = require('./Tarea');
+
 
 /*  */
-class Tareas {
+class Tareas1 {
     _listado = {};
 
     constructor() {
@@ -14,4 +14,4 @@ class Tareas {
     }
 }
 
-module.exports = Tareas;
+module.exports = Tareas1;

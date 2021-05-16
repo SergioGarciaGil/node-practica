@@ -1,16 +1,18 @@
+
+
 const inquirer = require('inquirer');
-require('colors');
+const colors = require('colors');
 
 
-const preguntas = [
+const preguntas= [
     {
         type: 'list',
         name: 'opcion',
-        message: 'Que deseas hacer?',
-        choices: [
+        message: 'que desea hacer?',
+        choices:[
             {
                 value: '1',
-                name: '1. Crear tareas '
+                name: '1. Crear tarea'
 
             },
             {
@@ -18,51 +20,36 @@ const preguntas = [
                 name: '2. Listar tareas'
             },
             {
-                value: '3',
-                name: '3. Listar tareas comnpletadas'
-            },
-            {
-                value: '4',
-                name: '4. Listar tareas pendientes'
-            },
-            {
                 value: '0',
-                name: '0. salir'
+                name: '0. Salir'
             }
-
-
         ]
-
-        
     }
 ];
+const inquirerMenu1 = async() => {
+    console.clear();
+    console.log('================================'.green);
+    console.log('       Seleccione una opción1   '.green);
+    console.log('==============================\n'.green);
 
-const mostrarMenu = async () => {
-   console.clear();
-    console.log('**************************************'.yellow);
-    console.log('         Escoja una opcion         '.yellow);
-    console.log('**************************************\n'.yellow);
     
-    const { opcion } = await inquirer.prompt(preguntas);
+     const { opcion } = await inquirer.prompt(preguntas);
     return opcion;
 }
-
-const pausa = async () => {
+const pausa = async() => {
     const question = [
         {
             type: 'input',
-            name: 'Enter',
-            message: `Presione ${'Enter'.green} para poder continuar`
-       
+            name: 'enter',
+            message: `presione ${'enter'.green} para continuar`
         }
     ];
-    await inquirer.prompt(question);
+    console.log('\n')
+    await inquirer.prompt(question)
 }
-
 
 module.exports = {
-    mostrarMenu,
+    inquirerMenu1,
     pausa
 }
-
 
