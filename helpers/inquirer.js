@@ -44,7 +44,7 @@ const preguntas = [
 const inquirerMenu = async () => {
     console.clear();
     console.log('==========================='.green);
-    console.log('  Selecccione una opción   '.green);
+    console.log('  Selecccione una opción   '.white);
     console.log('===========================\n'.green);
     
 
@@ -89,5 +89,6 @@ const leerInput = async (message) => {
 module.exports = {
     inquirerMenu,
     pausa,
-    leerInput
+    leerInput,
+    
 }
